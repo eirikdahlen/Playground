@@ -22,12 +22,12 @@ const Compendium = () => {
       });
   };
 
-  const getURL = (filename) => {
+  const getURL = async (filename) => {
     firebase.storage
       .ref(`/compendiums/${filename}`)
       .getDownloadURL()
       .then((url) => {
-        console.log(url);
+        window.open(url, '_blank');
       });
   };
 
@@ -38,7 +38,7 @@ const Compendium = () => {
         <div key={compendium.courseCode}>
           {compendium.name}
           {compendium.courseCode}
-          {getURL()}
+          <div onClick={async () => getURL(compendium.filename)}>Last ned</div>
         </div>
       ))}
     </div>
