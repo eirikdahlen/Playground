@@ -1,7 +1,13 @@
 import React from 'react';
+import Compendium from './Compendiums/Compendium';
 
-function App() {
-  return <div className="App">Testerud</div>;
-}
+const App = () => (
+  <div>
+    <div>
+      I've access to Firebase and render something.
+      <Compendium />
+    </div>
+  </div>
+);
 
 export default App;
