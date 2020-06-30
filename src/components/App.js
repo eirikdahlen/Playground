@@ -1,8 +1,9 @@
 import React from 'react';
 import Compendium from './Compendiums/Compendium';
+import './App.scss';
 
 const App = () => (
-  <div>
+  <div className={'appcontainer'}>
     <div>
       I've access to Firebase and render something.
       <Compendium />
