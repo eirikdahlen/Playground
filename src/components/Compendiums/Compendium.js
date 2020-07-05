@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import firebase from '../Firebase/firebase';
+import { useHistory } from 'react-router-dom';
 
 const Compendium = () => {
   const [compendiums, setCompendiums] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     getCompendiums();
@@ -22,9 +24,9 @@ const Compendium = () => {
       });
   };
 
-  const getURL = async (filename) => {
+  const getURL = async (courseCode) => {
     firebase.storage
-      .ref(`/compendiums/${filename}`)
+      .ref(`/compendiums/${courseCode}.pdf`)
       .getDownloadURL()
       .then((url) => {
         window.open(url, '_blank');
@@ -38,9 +40,12 @@ const Compendium = () => {
         <div key={compendium.courseCode}>
           {compendium.name}
           {compendium.courseCode}
-          <div onClick={async () => getURL(compendium.filename)}>Last ned</div>
+          <div onClick={async () => getURL(compendium.courseCode)}>
+            Last ned
+          </div>
         </div>
       ))}
+      <button onClick={() => history.push('/')}>Hei</button>
     </div>
   );
 };
