@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import firebase from '../Firebase/firebase';
 import { useHistory } from 'react-router-dom';
+import CompendiumList from './CompendiumList';
+import { colors } from '../../constants/colors';
+import { getColor } from '../../utils/functions';
+import './Compendium.css';
 
 const Compendium = () => {
   const [compendiums, setCompendiums] = useState([]);
@@ -24,28 +28,20 @@ const Compendium = () => {
       });
   };
 
-  const getURL = async (courseCode) => {
-    firebase.storage
-      .ref(`/compendiums/${courseCode}.pdf`)
-      .getDownloadURL()
-      .then((url) => {
-        window.open(url, '_blank');
-      });
-  };
-
   return (
-    <div>
+    <div className={'compendium-container'}>
       <h1>Compendiums</h1>
-      {compendiums && compendiums.map((compendium) => (
-        <div key={compendium.courseCode}>
-          {compendium.name}
-          {compendium.courseCode}
-          <div onClick={async () => getURL(compendium.courseCode)}>
-            Last ned
-          </div>
-        </div>
-      ))}
-      <button onClick={() => history.push('/')}>Hei</button>
+      <div className={'list-container'}>
+        {compendiums &&
+          compendiums.map((compendium, index) => (
+            <CompendiumList
+              name={compendium.name}
+              courseCode={compendium.courseCode}
+              color={getColor(index, colors)}
+            />
+          ))}
+      </div>
+      <button onClick={() => history.push('/')}>Tilback</button>
     </div>
   );
 };
