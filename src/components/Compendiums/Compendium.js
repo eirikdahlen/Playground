@@ -36,7 +36,7 @@ const Compendium = () => {
   return (
     <div>
       <h1>Compendiums</h1>
-      {compendiums.map((compendium) => (
+      {compendiums && compendiums.map((compendium) => (
         <div key={compendium.courseCode}>
           {compendium.name}
           {compendium.courseCode}

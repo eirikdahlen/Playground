@@ -1,0 +1,17 @@
+
+body {
+    --pg-white: #F3F3F4;
+    --pg-dark: #17181A;
+    --pg-green: #1E555C;
+    --pg-blue: #C9DAF8;
+    --pg-pink: #E3879E;
+    --pg-yellow: #FFD147;
+    background-color: var(--pg-white);
+    font-family: 'Raleway', sans-serif;
+}
+
+.appcontainer {
+    align-items: center;
+    justify-content: center;
+    
+}
