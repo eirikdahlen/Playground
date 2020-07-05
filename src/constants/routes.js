@@ -1,2 +1,8 @@
-export const LANDING = '/';
-export const COMPENDIUMS = '/compendiums';
+export const ROUTES = {
+  LANDING: '/',
+  COMPENDIUMS: '/compendiums',
+};
+
+export const ROUTENAMES = {
+  COMPENDIUMS: 'Compendiums',
+};

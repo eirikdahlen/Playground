@@ -1,17 +1,25 @@
-
 body {
-    --pg-white: #F3F3F4;
-    --pg-dark: #17181A;
-    --pg-green: #1E555C;
-    --pg-blue: #C9DAF8;
-    --pg-pink: #E3879E;
-    --pg-yellow: #FFD147;
-    background-color: var(--pg-white);
-    font-family: 'Raleway', sans-serif;
+  --pg-white: #f3f3f4;
+  --pg-dark: #17181a;
+  --pg-green: #1e555c;
+  --pg-blue: #c9daf8;
+  --pg-pink: #e3879e;
+  --pg-yellow: #ffd147;
+  background-color: var(--pg-white);
+  color: var(--pg-dark);
+  font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
 }
 
 .appcontainer {
-    align-items: center;
-    justify-content: center;
-    
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
 }

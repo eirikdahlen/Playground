@@ -1,9 +1,13 @@
 import React from 'react';
+import './PlayBox.css';
 
-const PlayBox = ({ name }) => {
+const PlayBox = ({ name, color }) => {
   return (
-    <div className={'playbox-container'}>
-      <h2>{name}</h2>
+    <div
+      className={'playbox-container'}
+      style={{ backgroundColor: `${color}` }}
+    >
+      {name}
     </div>
   );
 };
