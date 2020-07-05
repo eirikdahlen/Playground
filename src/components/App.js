@@ -5,7 +5,7 @@ import Compendium from './Compendiums/Compendium';
 import Navigation from './Navigation/Navigation';
 import * as ROUTES from '../constants/routes';
 import LandingPage from './LandingPage/LandingPage';
-import './App.scss';
+import './App.css';
 
 const App = () => (
   <Router>
