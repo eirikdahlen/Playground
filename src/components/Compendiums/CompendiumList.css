@@ -1,0 +1,73 @@
+.list-element {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+  border-radius: 15px;
+  color: var(--pg-white);
+  padding: 2rem;
+}
+
+.list-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.link-text {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--pg-white);
+  font-size: 20px;
+  width: 14rem;
+}
+
+.link-text:hover {
+  text-shadow: 1px 1px black;
+}
+
+.list-name {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.list-code {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pg-white);
+  color: var(--pg-dark);
+  margin: 20px;
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.download-button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px black;
+}
+
+@media only screen and (max-width: 800px) {
+  .list-element {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .download-button {
+    padding: 15px;
+    max-width: 7rem;
+  }
+}

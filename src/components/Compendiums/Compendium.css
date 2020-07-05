@@ -1,0 +1,35 @@
+.compendium-container {
+  margin: 5rem 8rem 0 8rem;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+}
+
+.compendium-container h1 {
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.list-container {
+  margin-top: 5rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .compendium-container {
+    margin: 1rem;
+  }
+
+  .compendium-container h1 {
+    font-size: 45px;
+    word-break: break-word;
+    margin-top: 4rem;
+  }
+}
