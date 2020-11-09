@@ -1,0 +1,13 @@
+.search-bar {
+  min-width: 15rem;
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Raleway';
+  border: none;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.search-bar:focus {
+  outline: none;
+}

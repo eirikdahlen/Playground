@@ -5,10 +5,18 @@ import CompendiumList from './CompendiumList';
 import { colors } from '../../constants/colors';
 import { getColor } from '../../utils/functions';
 import './Compendium.css';
+import SearchBar from '../SearchBar/SearchBar';
+import { orderBy } from 'lodash';
 
 const Compendium = () => {
   const [compendiums, setCompendiums] = useState([]);
+  const [searchText, setSearchText] = useState('');
+
   const history = useHistory();
+
+  const filterOnChange = (event) => {
+    setSearchText(event.target.value.toLowerCase());
+  };
 
   useEffect(() => {
     getCompendiums();
@@ -28,12 +36,27 @@ const Compendium = () => {
       });
   };
 
+  const getFilteredCompendiums = (searchText, compendiums) => {
+    let filteredCompendiums = orderBy(compendiums, ['name', 'courseCode']);
+    if (searchText) {
+      filteredCompendiums = compendiums.filter(
+        (compendium) =>
+          compendium.name.toLowerCase().includes(searchText) ||
+          compendium.courseCode.toLowerCase().includes(searchText)
+      );
+    }
+    return filteredCompendiums;
+  };
+
+  const filteredCompendiums = getFilteredCompendiums(searchText, compendiums);
+
   return (
     <div className={'compendium-container'}>
-      <h1>Compendiums</h1>
+      <h1>COMPENDIUMS</h1>
+      <SearchBar onChangeFunction={filterOnChange} />
       <div className={'list-container'}>
-        {compendiums &&
-          compendiums.map((compendium, index) => (
+        {filteredCompendiums &&
+          filteredCompendiums.map((compendium, index) => (
             <CompendiumList
               name={compendium.name}
               courseCode={compendium.courseCode}
@@ -41,7 +64,7 @@ const Compendium = () => {
             />
           ))}
       </div>
-      <button onClick={() => history.push('/')}>Tilback</button>
+      {/* <button onClick={() => history.push('/')}>Tilback</button> */}
     </div>
   );
 };

@@ -10,8 +10,8 @@ const App = () => (
   <Router>
     <div className={'appcontainer'}>
       <Switch>
-        <Route path={ROUTES.COMPENDIUMS} component={Compendium} />
-        <Route path={ROUTES.LANDING} component={LandingPage} />
+        {/* <Route path={ROUTES.COMPENDIUMS} component={Compendium} /> */}
+        <Route path={ROUTES.LANDING} component={Compendium} />
       </Switch>
     </div>
   </Router>
