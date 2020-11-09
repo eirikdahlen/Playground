@@ -1,11 +1,11 @@
 body {
   --pg-white: #f3f3f4;
   --pg-dark: #17181a;
-  --pg-green: #1e555c;
-  --pg-blue: #4a84e8;
-  /* --pg-blue: #c9daf8; */
-  --pg-pink: #e3879e;
-  --pg-yellow: #ffd147;
+  --pg-green: #05c793;
+  --pg-blue: #118ab2;
+  --pg-deep-blue: #073b4c;
+  --pg-pink: #ef476f;
+  --pg-yellow: #ffd166;
   background-color: var(--pg-white);
   color: var(--pg-dark);
   font-family: 'Raleway', sans-serif;
