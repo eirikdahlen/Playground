@@ -1,5 +1,5 @@
 .compendium-container {
-  margin: 5rem 8rem 0 8rem;
+  margin: 5rem 8rem 5rem 8rem;
 }
 
 .list-container {
@@ -13,13 +13,14 @@
 }
 
 .compendium-container h1 {
-  font-size: 70px;
-  font-weight: bold;
+  font-size: 80px;
+  font-weight: 500;
   margin: 0;
+  font-family: 'Playfair Display', serif;
 }
 
 .list-container {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
